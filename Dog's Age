@@ -1,0 +1,5 @@
+def age_calculator(N):
+    return N*7
+N = int(input())
+result = age_calculator(N)
+print(result)
