@@ -1,0 +1,9 @@
+N = int(input()) # total no of problems
+P = int(input()) # time to travel
+remaining_time = 240-P 
+count = 0
+for i in range(1, N+1):
+    if (remaining_time>0 and remaining_time>5*i): 
+        remaining_time = remaining_time - 5*i
+        count += 1
+print(count)
