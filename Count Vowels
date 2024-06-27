@@ -1,0 +1,8 @@
+str = input() # sentence
+arr = ['a', 'e', 'i', 'o', 'u']
+count = 0
+for i in str:
+    for j in arr:
+        if i == j: 
+            count = count+1
+print(count)
