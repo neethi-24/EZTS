@@ -1,0 +1,9 @@
+A = list(map(int,input().split())) # quantiiy of chocolate in jar
+N = int(input()) # number of jars
+a = 0
+for i in range(N):
+    if A[i]%N == 0:
+        a = A[i]//N
+    else:
+        a = A[i]//N+1
+print(a)
