@@ -1,0 +1,4 @@
+str = input() # any string with spaces
+substr = " " 
+c = str.count(substr) # counting the spaces in the str using count()
+print(c)
