@@ -1,0 +1,13 @@
+arr = list(map(int, input().split())) # arr of elements
+num = int(input()) # a number that to be subtracted with the arr
+diff = int(input()) # differnce of num and arr of elements
+
+def findCount(arr, num, diff):
+    count = 0
+    n = 0
+    for i in arr:
+        n = num - i # finding the difference of each arr with num
+        if abs(n) <= diff: #abs() is used to pass positive numbers
+            count += 1
+    return count 
+print(findCount(arr, num, diff))
