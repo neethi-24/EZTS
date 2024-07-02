@@ -1,0 +1,12 @@
+l = [10, 4, 3, 7, 6, 8, 2]
+n = len(l)
+for j in range(0, n):
+    pos = j
+    m = l[j]
+    for i in range(j, n):
+        if l[i] < m:
+            m = l[i]
+            pos = i
+            l[j], l[pos] = l[pos], l[j]
+            
+print(l)
