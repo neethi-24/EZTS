@@ -1,0 +1,54 @@
+k = [20,34,45,70,56,81,104,37,46,39]
+
+def check_prime(m):
+    flage = 0
+    for i in range(2,m):
+        if m%i == 0:
+            flage = 1
+            break
+        else:
+            i = i+1
+    if(flage == 1):
+            m = check_prime(m+1)
+    return m
+
+
+def h2_value(m):
+    #print("m: ",m)
+    lm = m-1
+    #print("lm: ",lm)
+    llm = lm+m
+    #print("llm:",llm)
+    for i in range(2,m):
+        if llm%i == 0:
+            flage = 1
+            break
+        else:
+            i = i+1
+    if(flage == 1):
+            check_prime(lm-1)
+     #       print("lm in if condition: ",llm)
+    
+    return lm
+    
+k = list(map(int,input("Enter the list to store: ").split(',')))
+lk = len(k)
+h1_prime = check_prime(lk)
+h2_prime = h2_value(h1_prime)
+h = [None]*11
+for i in range(len(k)):
+    n = 1
+    j = 0
+    h1 = k[i]%h1_prime
+    h2 = h2_prime-(k[i] % h2_prime)
+    h3 = (h1+j*h2)%h1_prime
+    while n == 1:
+        if h[h3] == None:
+            h[h3] = k[i]
+            n = 0
+        else:
+            j += 1
+            h3 = (h1+j*h2)%11
+            n = 1
+    i = 0
+print(h)
