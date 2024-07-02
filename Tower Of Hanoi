@@ -1,0 +1,12 @@
+def tower(n, source, dest, temp, ctr):
+    if n == 0:
+        return 
+    tower(n-1, source, temp, dest, ctr)
+    print("Move disk", n, "from", source, "to", dest)
+    ctr[0] += 1
+    tower(n-1, temp, dest, source, ctr)
+    
+n = 3
+ctr = [0] # call by reference value
+tower(n, 'A', 'C', 'B', ctr)
+print(ctr)
